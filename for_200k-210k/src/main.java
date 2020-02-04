@@ -6,5 +6,9 @@ public class main
         {
             System.out.println("номер билета " + i);
         }
+         for(int i = 220000; i <= 235000; ++i)
+        {
+            System.out.println("Номер билета " + i);
+        }
     }
 }
