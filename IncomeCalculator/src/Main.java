@@ -18,14 +18,15 @@ public class Main
     private static double minInvestmentsAmount = 100000;//минимальный размер инвестиций
 
     public static void main(String[] args)
-    {//Полученная формула выглядит так 100000=(0.85I-294200)-(0.204I-70608), при таком уравнении I=500916.409, что и подтверждает программа
-        // при значении прибыли в 500916 - компания НЕ МОЖЕТ инвестировать, при значении 500917 компания МОЖЕТ инвестировать
+    {//Полученная обратная формула выглядит так double resultIncome = (minInvestmentsAmount + (0.76 * calculateFixedCharges())) / 0.646;
+        //попробовал реализовать ниже, после ввода числа в программу считает искомую прибыль. Без статических коэффицентов не обошлось...
         while(true)
         {
             System.out.println("Введите сумму доходов компании за месяц " +
                 "(от 200 до 900 тысяч рублей): ");
             int income = (new Scanner(System.in)).nextInt();
-
+/*double resultIncome = (minInvestmentsAmount + (0.76 * calculateFixedCharges())) / 0.646;
+            System.out.println("Искомая прибыль: "resultIncome);*/
             if(!checkIncomeRange(income)) {//проверка проверки на "дурака"
                 continue;
             }
